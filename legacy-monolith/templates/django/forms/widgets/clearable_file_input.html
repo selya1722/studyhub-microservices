@@ -1,0 +1,8 @@
+{% if widget.is_initial %}Change Image{% endif %}
+<input type="{{ widget.type }}" name="{{ widget.name }}"{% include "django/forms/widgets/attrs.html" %}>
+{% if widget.is_initial %}{% if not widget.required %}
+<span class="clear-checkbox-row">
+<label for="{{ widget.checkbox_id }}">Clear Image:</label>
+<input type="checkbox" name="{{ widget.checkbox_name }}" id="{{ widget.checkbox_id }}"{% if widget.attrs.disabled %} disabled{% endif %}{% if widget.attrs.checked %} checked{% endif %}>
+</span>
+{% endif %}{% endif %}
