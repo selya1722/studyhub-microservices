@@ -1,28 +1,34 @@
 # Team Task Plan
 
-Deadline: **20 November** (presentation + viva afterwards). Everyone works on their own `feature/*` branch and opens a pull request into `develop`. Commit often so GitHub shows each person's contribution.
+Deadline: **20 November** (presentation + viva afterwards). Everyone works on their own `feature/*` branch and opens a pull request into `develop`. Commit often so GitHub shows each person's contribution. Tasks are tracked as GitHub issues (labels: `tharindu`, `duvindu`, `amaya`).
 
-Names are placeholders: replace `Member 1/2/3` with real names.
+| Member | GitHub | Role |
+|---|---|---|
+| Tharindu Kalhara | tharinduk001 | Team lead: architecture, repo, integration, review |
+| Duvindu Embuldeniya | duvindu-embuldeniya | Senior developer: backend features, security, DevOps |
+| Amaya Jayasekara | selya1722 | Documentation, API testing, UI and a small backend change |
 
-## Member 1 (lead, technical)
-- [x] Architecture, repo, gateway, user-service, room-service, docker-compose (initial version, branch `feature/core-services`)
-- [ ] Add unit tests for user-service and room-service (`feature/tests-core`)
-- [ ] Review all pull requests, keep `develop` green, merge to `main` before submission
-- [ ] Present: architecture, gateway, service communication, Docker
+## Tharindu (lead)
+- [x] Architecture, repo, gateway, user-service, room-service, docker-compose (branch `feature/core-services`)
+- [ ] #1 Unit tests for user-service and room-service (`feature/tests-core`)
+- [ ] #2 Review all pull requests, keep `develop` green, merge to `main` and tag `v1.0`
+- [ ] #11 Rehearse demo; present architecture, gateway and service communication
 
-## Member 2 (technical)
-- [ ] `feature/message-service`: understand `services/message-service/app.py`, then add: edit message (`PUT /messages/{id}`), pagination (`offset`), delete all messages of a room (`DELETE /messages?room_id=`, internal)
-- [ ] `feature/notification-service`: add "mark all as read", unread count endpoint (`GET /notifications/count`)
-- [ ] `feature/kubernetes` (stretch): write Deployment + Service YAML for each service
-- [ ] Present: message flow, notifications, resilience demo (stop a service)
+## Duvindu (experienced, most technical work)
+- [ ] #3 Message-service: edit message, pagination, internal room cleanup (`feature/message-service`)
+- [ ] #4 Notification-service: mark all read + unread count (`feature/notification-service`)
+- [ ] #12 Gateway: JWT validation and rate limiting (`feature/gateway-hardening`)
+- [ ] #13 CI: GitHub Actions running the smoke test (`feature/ci`)
+- [ ] #5 Kubernetes manifests, stretch goal (`feature/kubernetes`)
+- [ ] #11 Rehearse demo; present message flow, resilience demo (stop a service), CI/Kubernetes
 
-## Member 3 (less technical, well-scoped tasks)
-- [ ] `docs/diagram`: draw the final architecture diagram (draw.io / Mermaid) for the report and slides
-- [ ] `feature/postman`: build a Postman collection with one request per endpoint, export to `docs/postman_collection.json`; screenshots for the report
-- [ ] `feature/frontend-polish`: improve `services/gateway/static/index.html` (colours, layout, empty states, logo), HTML/CSS only
-- [ ] `feature/activity-service`: small change: add `GET /activity?type=message_posted` filter (guided by Member 1)
-- [ ] Write the report sections: project idea, business scenarios, team contributions; and the slides
-- [ ] Present: project idea, live demo walk-through of the UI
+## Amaya (guided, well-scoped tasks)
+- [ ] #6 Final architecture diagram (`feature/diagram`)
+- [ ] #7 Postman collection for all endpoints (`feature/postman`)
+- [ ] #8 Polish the web UI, HTML/CSS only (`feature/frontend-polish`)
+- [ ] #9 Activity-service: filter feed by event type, one small change (`feature/activity-filter`)
+- [ ] #10 Report and slides: project idea, scenarios, team contributions
+- [ ] #11 Rehearse demo; present the project idea and the UI walk-through
 
 ## Shared before submission
 - [ ] Everyone can run `docker compose up --build` on their own machine
