@@ -87,10 +87,28 @@
     {
       "name": "My profile",
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
         "method": "GET",
         "header": [],
         "url": {
-          "raw": ""
+          "raw": "{{baseUrl}}/api/users/me",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "users",
+            "me"
+          ]
         }
       },
       "response": []
@@ -98,10 +116,37 @@
     {
       "name": "Update profile",
       "request": {
-        "method": "GET",
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
         "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"bio\": \"Hello\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
         "url": {
-          "raw": ""
+          "raw": "{{baseUrl}}/api/users/me",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "users",
+            "me"
+          ]
         }
       },
       "response": []
@@ -112,7 +157,14 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": ""
+          "raw": "{{baseUrl}}/api/rooms",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "rooms"
+          ]
         }
       },
       "response": []
@@ -120,10 +172,36 @@
     {
       "name": "Create room",
       "request": {
-        "method": "GET",
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
         "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Python Help\",\r\n  \"topic\": \"python\",\r\n  \"description\": \"Ask here\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
         "url": {
-          "raw": ""
+          "raw": "{{baseUrl}}/api/rooms",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "rooms"
+          ]
         }
       },
       "response": []
@@ -134,7 +212,15 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": ""
+          "raw": "{{baseUrl}}/api/rooms/2",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "rooms",
+            "2"
+          ]
         }
       },
       "response": []
@@ -145,7 +231,14 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": ""
+          "raw": "{{baseUrl}}/api/topics",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "topics"
+          ]
         }
       },
       "response": []
@@ -153,10 +246,36 @@
     {
       "name": "Post message",
       "request": {
-        "method": "GET",
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
         "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"room_id\": 2,\r\n  \"body\": \"Hello! This is my first StudyHub message.\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
         "url": {
-          "raw": ""
+          "raw": "{{baseUrl}}/api/messages",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "messages"
+          ]
         }
       },
       "response": []
@@ -167,7 +286,20 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": ""
+          "raw": "{{baseUrl}}/api/messages?room_id=2",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "messages"
+          ],
+          "query": [
+            {
+              "key": "room_id",
+              "value": "2"
+            }
+          ]
         }
       },
       "response": []
@@ -175,10 +307,27 @@
     {
       "name": "Notifications",
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
         "method": "GET",
         "header": [],
         "url": {
-          "raw": ""
+          "raw": "{{baseUrl}}/api/notifications",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "notifications"
+          ]
         }
       },
       "response": []
@@ -189,7 +338,14 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": ""
+          "raw": "{{baseUrl}}/api/activity",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "activity"
+          ]
         }
       },
       "response": []
@@ -200,7 +356,15 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": ""
+          "raw": "{{baseUrl}}/api/activity/stats",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "activity",
+            "stats"
+          ]
         }
       },
       "response": []
